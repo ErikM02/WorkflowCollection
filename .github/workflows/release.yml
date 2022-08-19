@@ -1,10 +1,7 @@
 name: Release with Semantic Versioning and Changelog.
 
 on: 
-  workflow_call:
-    secrets:
-      GITHUB_TOKEN:
-        required: true
+  workflow_call
 
 jobs:
   release:
