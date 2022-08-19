@@ -1,9 +1,10 @@
 name: Release with Semantic Versioning and Changelog.
 
 on: 
-  push:
-    branches:
-      - 'main'
+  workflow_call:
+    secrets:
+      GITHUB_TOKEN:
+        required: true
 
 jobs:
   release:
