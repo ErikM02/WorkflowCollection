@@ -49,6 +49,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm install @semantic-release/exec -D
+          npm install @semantic-release/changelog -D
           npx semantic-release
       
 
