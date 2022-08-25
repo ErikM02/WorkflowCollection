@@ -29,4 +29,5 @@ jobs:
           npm install @semantic-release/changelog -D
           npm install @semantic-release/exec -D
           npx semantic-release
+          echo ${{ env.RELEASE_VERSION }}
           echo "::set-output name=releaseVersion::${{ env.RELEASE_VERSION }}"
