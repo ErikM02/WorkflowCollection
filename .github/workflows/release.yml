@@ -31,3 +31,9 @@ jobs:
           npx semantic-release
           echo ${{ env.RELEASE_VERSION }}
           echo "::set-output name=releaseVersion::${{ env.RELEASE_VERSION }}"
+    
+  debug:
+    runs-on: ubuntu-latest
+    needs: release
+    steps:
+      - run: echo ${{ needs.release.outputs.releaseVersion }}
