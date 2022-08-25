@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 'lts/*'
       - id: step1
-      - name: Release with semantic release
+        name: Release with semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
