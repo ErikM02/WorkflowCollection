@@ -1,9 +1,7 @@
 name: Lint, Test, Release Project and Build Docker Image with Semantic Versioning
 
 on: 
-  push:
-    branches:
-      - 'main'
+  workflow_call
 
 jobs:
   release:
