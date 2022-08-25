@@ -4,6 +4,7 @@ on:
   workflow_call:
     outputs:
       releaseVersion:
+        description: "Release Version, Semantic Versioning"
         value: ${{ jobs.release.outputs.output1 }}
 
 jobs:
