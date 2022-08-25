@@ -3,7 +3,9 @@ name: Build Docker Image
 on:
   workflow_call:
     inputs:
-      releaseVersion
+      releaseVersion:
+        required: true
+        type: string
 
 jobs:
   docker:
