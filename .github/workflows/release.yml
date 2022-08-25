@@ -1,7 +1,10 @@
 name: Release with Semantic Versioning and Changelog.
 
 on: 
-  workflow_call
+  workflow_call:
+    outputs:
+      releaseVersion:
+        value: ${{ jobs.release.outputs.output1 }}
 
 jobs:
   release:
