@@ -17,6 +17,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Debug
+        run: echo ${{ inputs.releaseVersion }}
       - name: Docker metadata
         id: meta
         uses: docker/metadata-action@v4
