@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      releaseVersion: ${{ steps.step1.outputs.releaseVersion }}
+      releaseVersion: ${{ steps.step1.outputs.version }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -21,8 +21,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
-      - id: step1
-        name: Release with semantic release
+
+      - name: Release with semantic release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -30,7 +30,9 @@ jobs:
           npm install @semantic-release/exec -D
           npx semantic-release
           echo ${{ env.RELEASE_VERSION }}
-          echo "::set-output name=releaseVersion::${{ env.RELEASE_VERSION }}"
+        
+      - id: step1
+        run: echo "::set-output name=version::${{ env.RELEASE_VERSION }}"
     
   debug:
     runs-on: ubuntu-latest
