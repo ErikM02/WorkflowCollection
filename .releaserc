@@ -9,7 +9,6 @@
     ["@semantic-release/github", {
         "assets": ["docs/CHANGELOG.md"]
     }],
-    #Saves Release Version as an Environment Variable in a workflow run. Used to set Docker Image version.
     ["@semantic-release/exec", {
         "prepareCmd": "echo 'RELEASE_VERSION=${nextRelease.version}' >> $GITHUB_ENV"
     }]
