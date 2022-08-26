@@ -4,8 +4,8 @@ on:
   workflow_call:
     inputs:
       releaseVersion:
-        required: true
         type: string
+        default: latest
 
 jobs:
   docker:
