@@ -1,7 +1,11 @@
 name: Lint and Test Angular
 
 on:
-  workflow_call
+  workflow_call:
+    inputs:
+      nodeVersion:
+        type: string
+        default: '14.x, 16.x'
 
 jobs:
   build:
@@ -10,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x]
+        node-version: [${{ inputs.nodeVersion }}]
 
     steps:
     - uses: actions/checkout@v3
