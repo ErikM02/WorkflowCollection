@@ -1,11 +1,9 @@
 name: Lint and Test Angular
 
-on:
-  workflow_call:
-    inputs:
-      nodeVersion:
-        type: string
-        default: latest
+on: 
+  push:
+    branches:
+      - 'main'
 
 jobs:
   build:
@@ -17,7 +15,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ inputs.nodeVersion }}
+        node-version: ${{ latest }}
         cache: 'npm'
 
     - name: Install
